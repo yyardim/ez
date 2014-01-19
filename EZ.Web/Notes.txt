@@ -1,0 +1,8 @@
+﻿//EZ Database Basic Queries
+select * from ez.ez.Category (nolock)
+select * from ez.ez.CategoryHierarchy with (nolock)
+select * from ez.ez.CategoryEvent with (nolock)
+select * from ez.ez.Event with (nolock)
+select * from ez.ez.EventPerson with (nolock)
+select * from ez.ez.Person with (nolock)
+select * from ez.ez.PersonAddress with (nolock)

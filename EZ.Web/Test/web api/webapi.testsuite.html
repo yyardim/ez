@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!--
+        QUnit: http://docs.jquery.com/QUnit
+        QUnit-Composite: http://www.elijahmanor.com/2012/05/qunit-compsite-addon-running-multiple.html
+        -->
+    <meta charset="UTF-8" />
+    <title>EZ Web API Test Suite (QUnit)</title>
+
+    <link rel="stylesheet" href="../qunit/qunit.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../qunit/qunit-composite.css" />
+    
+    <script type="text/javascript" src="../qunit/qunit.js"></script>
+    <script type="text/javascript" src="../qunit/qunit-composite.js"></script>
+
+    <script>
+        QUnit.testSuites([
+            "webapi.endpoint.tests.html",
+            //"webapi.get-result.tests.html",
+            //"webapi.eventer-cud.tests.html",
+            //"webapi.personaddress-cud.tests.html",
+            //"webapi.eventer-cud-validation.tests.html",
+            "webapi.person-cud.tests.html"
+            //"webapi.event-cud.tests.html"
+        ]);
+    </script>
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+</body>
+</html>

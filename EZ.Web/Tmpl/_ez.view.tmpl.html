@@ -1,0 +1,28 @@
+﻿<div data-bind="with: event">
+    <div class="titleblock">
+        <h1 data-bind="text:title"></h1>
+    </div>
+    <div class="details-left">
+        <div>
+            <label>Ez</label>
+            <address data-bind="text: name"></address>
+        </div>
+        <div>
+            <label>When?</label>
+            <address data-bind="text: ezDateTime"></address>
+        </div>
+    </div>
+    <div class="details-right">
+        <div>
+            <!--
+                FOR DEBUGGING
+                <span data-bind="text:$parent.isDirty"></span>
+                <span data-bind="text:isDirty"></span>
+                <span data-bind="text:attendance().isDirty"></span>
+             -->
+
+            <label>Description</label>
+            <span class="scrollable-text" data-bind="text: description"></span>
+        </div>
+    </div>
+</div>

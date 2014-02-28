@@ -9,12 +9,12 @@ namespace EZ.Domain
     public class Person
     {
         private ICollection<PersonAddress> _personAddresses;
-        private ICollection<Eventer> _eventers;
+        private ICollection<EzPerson> _ezPersons;
         
         public Person()
         {
             _personAddresses = new List<PersonAddress>();
-            _eventers = new List<Eventer>();
+            _ezPersons = new List<EzPerson>();
         }
 
         [Key]
@@ -36,10 +36,10 @@ namespace EZ.Domain
 
         //[NotMapped]
         //public State State { get; set; }
-        public virtual ICollection<Eventer> Eventers 
+        public virtual ICollection<EzPerson> EzPersons 
         {
-            get { return _eventers; }
-            set { _eventers = value; }
+            get { return _ezPersons; }
+            set { _ezPersons = value; }
         }
         public virtual ICollection<PersonAddress> PersonAddresses 
         {

@@ -23,13 +23,13 @@ namespace EZ.Data
     /// if those features are supported. The repositories rely on their parent UoW
     /// to provide the interface to the data layer (which is the EZ DbContext in EZ).
     /// </remarks>
-    public class EZUoW : IUoW, IDisposable
+    public class EzUow : IEzUow, IDisposable
     {
         //private readonly IDatabaseFactory databaseFactory;
-        private EZContext DbContext { get; set; }
+        private EzDbContext DbContext { get; set; }
         protected IRepositoryProvider RepositoryProvider { get; set; }
 
-        public EZUoW(IRepositoryProvider repositoryProvider)
+        public EzUow(IRepositoryProvider repositoryProvider)
         {
             CreateDbContext();
 
@@ -45,7 +45,7 @@ namespace EZ.Data
         //public IRepository<Address> Addresses { get { return GetStandardRepo<Address>(); } }
         public IAddressRepository Addresses { get { return GetRepo<IAddressRepository>(); } }
         public ICategoryRepository Categories { get { return GetRepo<ICategoryRepository>(); } }
-        public IEventerRepository Eventers { get { return GetRepo<IEventerRepository>(); } }
+        public IEzPersonRepository EzPersons { get { return GetRepo<IEzPersonRepository>(); } }
         public IPersonAddressRepository PersonAddresses { get { return GetRepo<IPersonAddressRepository>(); } }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace EZ.Data
 
         protected void CreateDbContext()
         {
-            DbContext = new EZContext();
+            DbContext = new EzDbContext();
 
             // Do NOT enable proxied entities, else serialization fails
             DbContext.Configuration.ProxyCreationEnabled = false;

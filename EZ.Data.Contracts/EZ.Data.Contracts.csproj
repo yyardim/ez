@@ -41,12 +41,12 @@
   <ItemGroup>
     <Compile Include="IAddressRepository.cs" />
     <Compile Include="ICategoryRepository.cs" />
-    <Compile Include="IEventerRepository.cs" />
+    <Compile Include="IEzPersonRepository.cs" />
     <Compile Include="IEzRepository.cs" />
     <Compile Include="IPersonAddressRepository.cs" />
     <Compile Include="IPersonRepository.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="IUoW.cs" />
+    <Compile Include="IEzUow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

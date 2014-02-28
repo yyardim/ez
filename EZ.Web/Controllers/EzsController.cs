@@ -11,7 +11,7 @@ namespace EZ.Web.Controllers
 {
     public class EzsController : ApiControllerBase
     {
-        public EzsController(IUoW uow)
+        public EzsController(IEzUow uow)
         {
             Uow = uow;
         }

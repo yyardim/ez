@@ -4,7 +4,7 @@ using System.Data.Entity;
 
 namespace EZ.Data
 {
-    public class PersonRepository : EZRepository<Person> , IPersonRepository
+    public class PersonRepository : EzRepository<Person> , IPersonRepository
     {
         public PersonRepository(DbContext context) : base(context) { }
     }

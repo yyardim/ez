@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EZ.Data
 {
-    public class PersonAddressRepository : EZRepository<PersonAddress>, IPersonAddressRepository
+    public class PersonAddressRepository : EzRepository<PersonAddress>, IPersonAddressRepository
     {
         public PersonAddressRepository(DbContext context) : base(context) { }
         public override PersonAddress GetById(long id)

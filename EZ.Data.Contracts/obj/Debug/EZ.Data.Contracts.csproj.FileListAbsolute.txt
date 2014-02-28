@@ -7,3 +7,12 @@ C:\WinnerSol\Eventerz\EZ.Data.Contracts\bin\Debug\EZ.Domain.pdb
 C:\WinnerSol\Eventerz\EZ.Data.Contracts\bin\Debug\EntityFramework.xml
 C:\WinnerSol\Eventerz\EZ.Data.Contracts\obj\Debug\EZ.Data.Contracts.dll
 C:\WinnerSol\Eventerz\EZ.Data.Contracts\obj\Debug\EZ.Data.Contracts.pdb
+C:\WinnerSol\ez\EZ.Data.Contracts\bin\Debug\EZ.Data.Contracts.dll
+C:\WinnerSol\ez\EZ.Data.Contracts\bin\Debug\EZ.Data.Contracts.pdb
+C:\WinnerSol\ez\EZ.Data.Contracts\bin\Debug\EZ.Domain.dll
+C:\WinnerSol\ez\EZ.Data.Contracts\bin\Debug\EntityFramework.dll
+C:\WinnerSol\ez\EZ.Data.Contracts\bin\Debug\EZ.Domain.pdb
+C:\WinnerSol\ez\EZ.Data.Contracts\bin\Debug\EntityFramework.xml
+C:\WinnerSol\ez\EZ.Data.Contracts\obj\Debug\EZ.Data.Contracts.csprojResolveAssemblyReference.cache
+C:\WinnerSol\ez\EZ.Data.Contracts\obj\Debug\EZ.Data.Contracts.dll
+C:\WinnerSol\ez\EZ.Data.Contracts\obj\Debug\EZ.Data.Contracts.pdb

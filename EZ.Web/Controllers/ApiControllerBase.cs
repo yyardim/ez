@@ -6,7 +6,7 @@ namespace EZ.Web.Controllers
 {
     public abstract class ApiControllerBase : ApiController
     {
-        protected IUoW Uow { get; set; }
+        protected IEzUow Uow { get; set; }
 
         // NOT NECESSARY TO DISPOSE THE UOW IN OUR CONTROLLERS
         // Recall that we let IoC inject the Uow into our controllers

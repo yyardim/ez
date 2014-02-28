@@ -11,7 +11,7 @@ namespace EZ.Web.Controllers
     public class PersonsController : ApiControllerBase
     {
 
-        public PersonsController(IUoW uow)
+        public PersonsController(IEzUow uow)
         {
             Uow = uow;
         }
@@ -36,7 +36,7 @@ namespace EZ.Web.Controllers
 
             var response = Request.CreateResponse(HttpStatusCode.Created, person);
 
-            //Compose location header that tells how to get this eventer
+            //Compose location header that tells how to get this ezPerson
             response.Headers.Location = new Uri(Url.Link(WebApiConfig.ControllerAndId, new { id = person.PersonId }));
 
             return response;

@@ -15,8 +15,8 @@ namespace EZ.Data
     /// <summary>
     /// The EZ-dependent, generic repository for data acess
     /// </summary>
-    /// <typeparam name="T">Type of entity for this EZRepository.</typeparam>
-    public class EZRepository<T> : IRepository<T> where T : class
+    /// <typeparam name="T">Type of entity for this EzRepository.</typeparam>
+    public class EzRepository<T> : IRepository<T> where T : class
     {
         #region Attributes
         protected DbContext DbContext { get; set; }
@@ -25,7 +25,7 @@ namespace EZ.Data
 
         #region CTOR
 
-        public EZRepository(DbContext dbContext)
+        public EzRepository(DbContext dbContext)
         {
             if (dbContext == null)
                 throw new ArgumentNullException("dbContext");

@@ -43,7 +43,7 @@ namespace EZ.Data
             {
                 {typeof(IAddressRepository), dbContext => new AddressRepository(dbContext)},
                 {typeof(ICategoryRepository), dbContext => new CategoryRepository(dbContext)},
-                {typeof(IEventerRepository), dbContext => new EventerRepository(dbContext)},
+                {typeof(IEzPersonRepository), dbContext => new EzPersonRepository(dbContext)},
                 {typeof(IEzRepository), dbContext => new EzRepository(dbContext)},
                 {typeof(IPersonAddressRepository), dbContext => new PersonAddressRepository(dbContext)},
                 {typeof(IPersonRepository), dbContext => new PersonRepository(dbContext)}                
@@ -113,7 +113,7 @@ namespace EZ.Data
         /// <returns></returns>
         protected virtual Func<DbContext, object> DefaultEntityRepositoryFactory<T>() where T : class
         {
-            return dbContext => new EZRepository<T>(dbContext);
+            return dbContext => new EzRepository<T>(dbContext);
         }
     }
 }

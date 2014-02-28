@@ -10,7 +10,7 @@ using System.Data.Entity;
 
 namespace EZ.Data
 {
-    public class AddressRepository : EZRepository<Address>, IAddressRepository
+    public class AddressRepository : EzRepository<Address>, IAddressRepository
     {
         public AddressRepository(DbContext context) : base(context) { }
     }

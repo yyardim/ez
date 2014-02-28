@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EZ.Data
 {
-    public class CategoryRepository : EZRepository<Category>, ICategoryRepository
+    public class CategoryRepository : EzRepository<Category>, ICategoryRepository
     {
         public CategoryRepository(DbContext context) : base(context) { }
 

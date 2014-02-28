@@ -8,10 +8,12 @@ using EZ.Domain;
 
 namespace EZ.Data.SampleData
 {
-    public class EZDatabaseInitializer : DropCreateDatabaseIfModelChanges<EZContext>
+    public class EzDatabaseInitializer
+        : DropCreateDatabaseAlways<EzDbContext>
+        //: DropCreateDatabaseIfModelChanges<EzDbContext>
     {
         private Random random = new Random();
-        protected override void Seed(EZContext context)
+        protected override void Seed(EzDbContext context)
         {
             var persons = AddPeople(context,10);
             var addresses = AddAddresses(context);
@@ -21,7 +23,7 @@ namespace EZ.Data.SampleData
             var personAddresses = AddPersonAddresses(context, persons, addresses);
         }
 
-        private List<PersonAddress> AddPersonAddresses(EZContext context, List<Person> persons, List<Address> addresses)
+        private List<PersonAddress> AddPersonAddresses(EzDbContext context, List<Person> persons, List<Address> addresses)
         {
             var personAddresses = new List<PersonAddress>();
             var addressCnt = addresses.Count;
@@ -42,11 +44,11 @@ namespace EZ.Data.SampleData
             return personAddresses;
         }
 
-        private List<Eventer> AddEzPersons(EZContext context, List<Person> persons, List<Ez> ezs)
+        private List<EzPerson> AddEzPersons(EzDbContext context, List<Person> persons, List<Ez> ezs)
         {
             var ezCnt = ezs.Count;
 
-            var ezPersons = persons.Select(p => new Eventer
+            var ezPersons = persons.Select(p => new EzPerson
             {
                 Guest = 3, 
                 IsGoing = true, 
@@ -56,7 +58,7 @@ namespace EZ.Data.SampleData
                 EzId = ezs.ElementAt(random.Next(0, ezCnt - 1)).EzId
             }).ToList();
 
-            ezPersons.ForEach(ez => context.Eventers.Add(ez));
+            ezPersons.ForEach(ez => context.EzPersons.Add(ez));
             context.SaveChanges();
             return ezPersons;
         }
@@ -67,7 +69,7 @@ namespace EZ.Data.SampleData
             return random1.Next(min, max);
         }
 
-        private List<Address> AddAddresses(EZContext context)
+        private List<Address> AddAddresses(EzDbContext context)
         {
             var addresses = new List<Address>();
             
@@ -129,7 +131,7 @@ namespace EZ.Data.SampleData
             return addresses;
         }
 
-        private List<Category> AddCategories(EZContext context)
+        private List<Category> AddCategories(EzDbContext context)
         {
             var CatTextGenerator = new SampleTextGenerator();
             const SampleTextGenerator.SourceNames CatTextSource = SampleTextGenerator.SourceNames.Decameron;
@@ -203,7 +205,7 @@ namespace EZ.Data.SampleData
             return categories;
         }
 
-        private List<Ez> AddEzs(EZContext context)
+        private List<Ez> AddEzs(EzDbContext context)
         {
             var ezTextGenerator = new SampleTextGenerator();
             const SampleTextGenerator.SourceNames ezTextSource = SampleTextGenerator.SourceNames.Decameron;
@@ -278,7 +280,7 @@ namespace EZ.Data.SampleData
             return ezs;
         }
 
-        private List<Person> AddPeople(EZContext context, int count)
+        private List<Person> AddPeople(EzDbContext context, int count)
         {
             var persons = new List<Person>();
             AddKnownPeople(persons, context);
@@ -287,7 +289,7 @@ namespace EZ.Data.SampleData
             context.SaveChanges();
             return persons;
         }
-        private void AddKnownPeople(List<Person> persons, EZContext context)
+        private void AddKnownPeople(List<Person> persons, EzDbContext context)
         {
             var bioTextGenerator = new SampleTextGenerator();
             const SampleTextGenerator.SourceNames bioTextSource = SampleTextGenerator.SourceNames.ChildHarold;

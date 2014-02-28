@@ -51,7 +51,7 @@
     <Compile Include="Models\Enums\AddressType.cs" />
     <Compile Include="Models\Ez.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Eventer.cs" />
+    <Compile Include="Models\EzPerson.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ModelDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EZ.Domain.Ez">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAgQgAAUQAAggQAICAAEAQCAAAEAAAAAAA=</HashCode>
+      <FileName>Models\Ez.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EZ.Domain.Person">
+    <Position X="8.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAEAAACABAACEQQEQAAQAAAAAAAAgAAAEAAAgAGg=</HashCode>
+      <FileName>Models\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EZ.Domain.EzPerson">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIgIAAAAAAAAAAIEAAAAgAQAAIAQgAAAAAAECAAAAAg=</HashCode>
+      <FileName>Models\EzPerson.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EZ.Domain.Address">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCAIAAACAAABAAAIIAAAAAQAAAAAAAAAAAAECAQQgCA=</HashCode>
+      <FileName>Models\Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EZ.Domain.PersonAddress">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAAAQAAAAAAAAAEAAAAAAQAAAAAAAACAAAEAAAAAAA=</HashCode>
+      <FileName>Models\PersonAddress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

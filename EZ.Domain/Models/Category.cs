@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EZ.Domain
 {
-    [Table("Category", Schema = "EZ")]
+    [Table("Category", Schema = "ez")]
     public class Category
     {
         private ICollection<Category> _parentCategories; 

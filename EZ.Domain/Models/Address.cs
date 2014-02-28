@@ -6,7 +6,7 @@ using System.Data.Entity.Spatial;
 
 namespace EZ.Domain
 {
-    [Table("Address", Schema = "EZ")]
+    [Table("Address", Schema = "ez")]
     public partial class Address
     {
         private ICollection<Ez> _ezs;

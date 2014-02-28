@@ -10,7 +10,7 @@
                 ko.applyBindings(vm.ezs, getView(ids.ezs));
                 //ko.applyBindings(vm.ezcategories, getView(ids.ezcategories));
                 //ko.applyBindings(vm.addresses, getView(ids.addresses));
-                //ko.applyBindings(vm.eventerz, getView(ids.eventerz));
+                //ko.applyBindings(vm.ezPersons, getView(ids.ezPersons));
                 //ko.applyBindings(vm.personaddresses, getView(ids.personaddresses));
             },
 

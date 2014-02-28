@@ -10,7 +10,7 @@ using System.Data.Entity;
 
 namespace EZ.Data
 {
-    public class EzRepository : EZRepository<Ez>, IEzRepository
+    public class EzRepository : EzRepository<Ez>, IEzRepository
     {
         public EzRepository(DbContext context) : base(context) { }
     }

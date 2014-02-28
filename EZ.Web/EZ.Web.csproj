@@ -174,7 +174,7 @@
     <Compile Include="Controllers\AddressesController.cs" />
     <Compile Include="Controllers\ApiControllerBase.cs" />
     <Compile Include="Controllers\EzsController.cs" />
-    <Compile Include="Controllers\EventerzController.cs" />
+    <Compile Include="Controllers\EzPersonsController.cs" />
     <Compile Include="Controllers\PersonAddressesController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Global.asax.cs">

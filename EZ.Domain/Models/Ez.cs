@@ -5,21 +5,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EZ.Domain
 {
-    [Table("Event", Schema= "EZ")]
+    [Table("Ez", Schema= "ez")]
     public class Ez
     {
-        private ICollection<Eventer> _eventers;
+        private ICollection<EzPerson> _ezPersons;
         private ICollection<Category> _categories;
 
         public Ez()
         {
-            _eventers = new List<Eventer>();
+            _ezPersons = new List<EzPerson>();
             _categories = new List<Category>();
         }
 
         [Key]
         public long EzId { get; set; }
-        public long CategoryId { get; set; }
+        //public long CategoryId { get; set; }
         
         public DateTime DateTime { get; set; }
         public string Name { get; set; }
@@ -39,10 +39,10 @@ namespace EZ.Domain
         //[NotMapped]
         //public State State { get; set; }
         
-        public virtual ICollection<Eventer> Eventers 
+        public virtual ICollection<EzPerson> EzPersons 
         {
-            get { return _eventers; }
-            set { _eventers = value; }
+            get { return _ezPersons; }
+            set { _ezPersons = value; }
         }
 
         public virtual ICollection<Category> Categories

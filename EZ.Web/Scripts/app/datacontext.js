@@ -143,7 +143,7 @@
             //  dataservice's 'get' method
             //  model mapper
             //----------------------------------
-            //eventerz = new EntitySet(dataservice.eventerz.getEventz, modelmapper.eventerz, model.eventerz.Nullo);
+            //ezPersons = new EntitySet(dataservice.ezPersons.getEventz, modelmapper.ezPersons, model.ezPersons.Nullo);
             //addresses = new EntitySet(dataservice.lookup.getRooms, modelmapper.room, model.Room.Nullo),
             ezs = new EntitySet(dataservice.ez.getEzs, modelmapper.ez, model.Ez.Nullo),
             persons = new EntitySet(dataservice.person.getPersons, modelmapper.person, model.Person.Nullo);
@@ -152,7 +152,7 @@
             //speakerSessions = new SpeakerSessions.SpeakerSessions(persons, sessions);
         {   // yy - I put that curly brace to be able to collapse the shit below
         // Attendance extensions
-        //eventerz.addData = function (eventerzModel, callbacks) {
+        //ezPersons.addData = function (ezPersonsModel, callbacks) {
         //    var attendanceModel = new model.Attendance()
         //            .sessionId(sessionModel.id())
         //            .personId(getCurrentUserId()),
@@ -246,16 +246,16 @@
 
         //        if (att.isNullo || forceRefresh) {
         //            // get fresh from database:YY - 12082013
-        //            dataservice.eventerz.getEventz(
+        //            dataservice.ezPersons.getEventz(
         //                {
         //                    success: function (dto) {
         //                        // updates the session returned from getLocalById() above
-        //                        att = eventerz.mapDtoToContext(dto);
+        //                        att = ezPersons.mapDtoToContext(dto);
         //                        if (callbacks && callbacks.success) { callbacks.success(att); }
         //                        def.resolve(dto);
         //                    },
         //                    error: function (response) {
-        //                        logger.error('oops! could not retrieve eventerz ' + sessionId);
+        //                        logger.error('oops! could not retrieve ezPersons ' + sessionId);
         //                        if (callbacks && callbacks.error) { callbacks.error(response); }
         //                        def.reject(response);
         //                    }

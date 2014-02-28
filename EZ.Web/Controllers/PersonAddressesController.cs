@@ -11,7 +11,7 @@ namespace EZ.Web.Controllers
 {
     public class PersonAddressesController : ApiControllerBase
     {
-        public PersonAddressesController(IUoW uow)
+        public PersonAddressesController(IEzUow uow)
         {
             Uow = uow;
         }

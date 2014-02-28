@@ -15,7 +15,7 @@ namespace EZ.Web
 
             kernel.Bind<RepositoryFactories>().To<RepositoryFactories>().InSingletonScope();
             kernel.Bind<IRepositoryProvider>().To<RepositoryProvider>();
-            kernel.Bind<IUoW>().To<EZUoW>();
+            kernel.Bind<IEzUow>().To<EzUow>();
 
             //Tell WebApi how to use our Ninject IoX
             config.DependencyResolver = new NinjectDependencyResolver(kernel);

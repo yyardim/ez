@@ -20,7 +20,7 @@ namespace EZ.Data
         /// Get and set the <see cref="DbContext"/> with which to initialize a repository
         /// if one must be created
         /// </summary>
-        DbContext DbContext { get; set; }   //TODO: Should I use this or EZContext??
+        DbContext DbContext { get; set; }   //TODO: Should I use this or EzDbContext??
 
         /// <summary>
         /// Get an <see cref="IRepository{T}"/> for entity type, T.

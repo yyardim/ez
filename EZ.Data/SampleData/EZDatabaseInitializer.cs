@@ -9,8 +9,8 @@ using EZ.Domain;
 namespace EZ.Data.SampleData
 {
     public class EzDatabaseInitializer
-        : DropCreateDatabaseAlways<EzDbContext>
-        //: DropCreateDatabaseIfModelChanges<EzDbContext>
+        //: DropCreateDatabaseAlways<EzDbContext>
+        : DropCreateDatabaseIfModelChanges<EzDbContext>
     {
         private Random random = new Random();
         protected override void Seed(EzDbContext context)

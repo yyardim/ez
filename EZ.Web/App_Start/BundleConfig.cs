@@ -48,13 +48,19 @@ namespace EZ.Web
                     "~/Scripts/lib/knockout.dirtyFlag.js",
                     "~/Scripts/lib/knockout.validation.js",
                     "~/Scripts/lib/koExternalTemplateEngine.js",
+                    
+                    //Breeze plugins
+                    "~/Scripts/lib/q.js",
+                    "~/Scripts/lib/breeze.debug.js",
+                    "~/Scripts/lib/breeze.intellisense.js",
 
                     // Other 3rd party libraries
                     "~/Scripts/lib/underscore.js",
                     "~/Scripts/lib/moment.js",
                     "~/Scripts/lib/sammy-{version}.js",
                     "~/Scripts/lib/amplify.*",
-                    "~/Scripts/lib/toastr.js"
+                    "~/Scripts/lib/toastr.js",
+                    "~/Scripts/lib/bootstrap.min.js"
                     ));
 
             bundles.Add(new ScriptBundle("~/bundles/jsmocks")
@@ -62,19 +68,18 @@ namespace EZ.Web
 
             // All application JS files (except mocks)
             bundles.Add(new ScriptBundle("~/bundles/jsapplibs")
-                .IncludeDirectory("~/Scripts/app/", "*.js", searchSubdirectories: false));
+                .IncludeDirectory("~/Scripts/app/", "*.js", searchSubdirectories: false));          //DEV
+                //.IncludeDirectory("~/Scripts/app/", "*.min.js", searchSubdirectories: false));    //PRODUCTION
 
             // 3rd Party CSS files
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/boilerplate-styles.css",
-                "~/Content/toastr.css",
-                "~/Content/Site.css",
-                "~/Content/main.css",
-                "~/Content/normalize.css"));
-
+            bundles.Add(new StyleBundle("~/Content/Template/css").Include(
+                "~/Content/Template/css/bootstrap-theme.min.css",
+                "~/Content/Template/css/bootstrap.min.css",
+                "~/Content/Site.css"));
+            
             // Custom LESS files
-            bundles.Add(new Bundle("~/Content/Less", new LessTransform(), new CssMinify())
-                .Include("~/Content/styles.less"));
+            bundles.Add(new Bundle("~/Content", new LessTransform(), new CssMinify())
+                .Include("~/Content/Site.less"));
         }
     }
 }

@@ -9,7 +9,7 @@ namespace EZ.Data
 {
     public interface IRepository<T> where T : class
     {
-        IQueryable<T> GetAll();        
+        IQueryable<T> GetAll();
         T GetById(long Id);
         T GetById(string Id);
         void Add(T entity);

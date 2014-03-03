@@ -11,7 +11,7 @@ namespace EZ.Data
         //private string ezSchema = "EZ";
 
         public EzDbContext()
-            : base(nameOrConnectionString:"EzDbContext") { }
+            : base(nameOrConnectionString:"ez") { }
 
         static EzDbContext()
         {

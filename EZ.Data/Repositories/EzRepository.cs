@@ -13,5 +13,10 @@ namespace EZ.Data
     public class EzRepository : EzRepository<Ez>, IEzRepository
     {
         public EzRepository(DbContext context) : base(context) { }
+
+        public IQueryable<Ez> GetLastTen()
+        {
+            return DbSet.OrderByDescending(pk => pk.EzId).Take(2);
+        }
     }
 }

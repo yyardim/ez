@@ -32,6 +32,7 @@ namespace EZ.Domain
         public bool IsActive { get; set; }
         public bool IsCheckInRequired { get; set; }
         public bool IsPublic { get; set; }
+        //public bool IsModelChanged { get; set; }
         public short? MaxGuests { get; set; }
         public DateTime? DateCreated { get; set; }
         //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]

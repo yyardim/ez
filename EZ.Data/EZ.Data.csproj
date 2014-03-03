@@ -60,7 +60,6 @@
     <Compile Include="Contracts\IRepositoryProvider.cs" />
     <Compile Include="Infrastructure\RepositoryFactories.cs" />
     <Compile Include="Infrastructure\RepositoryProvider.cs" />
-    <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\EzUow.cs" />
     <Compile Include="EzDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

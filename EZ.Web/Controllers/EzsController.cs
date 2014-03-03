@@ -19,7 +19,8 @@ namespace EZ.Web.Controllers
         // GET api/event
         public IEnumerable<Ez> Get()
         {
-            return Uow.Ezs.GetAll().OrderBy(e => e.DateTime);
+            //return Uow.Ezs.GetAll().OrderBy(e => e.DateTime);
+            return Uow.Ezs.GetLastTen();
         }
 
         // GET api/event/5

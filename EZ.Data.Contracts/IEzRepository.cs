@@ -10,5 +10,6 @@ namespace EZ.Data.Contracts
 {
     public interface IEzRepository : IRepository<Ez>
     {
+        IQueryable<Ez> GetLastTen();
     }
 }

@@ -44,6 +44,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Breeze.ContextProvider">
+      <HintPath>..\packages\Breeze.Server.ContextProvider.1.4.9\lib\Breeze.ContextProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.ContextProvider.NH">
+      <HintPath>..\packages\Breeze.Server.ContextProvider.NH.1.4.9\lib\Breeze.ContextProvider.NH.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.WebApi2">
+      <HintPath>..\packages\Breeze.Server.WebApi2.1.4.9\lib\Breeze.WebApi2.dll</HintPath>
+    </Reference>
     <Reference Include="dotless.Core, Version=1.4.0.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\dotless.Core.dll</HintPath>
@@ -56,6 +65,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
@@ -65,6 +77,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
@@ -142,11 +157,15 @@
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BreezeWebApiConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\GlobalConfig.cs" />
@@ -184,11 +203,172 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
-    <Content Include="Content\normalize.min.css" />
-    <Content Include="Content\styles.less" />
+    <Content Include="Content\Site.css">
+      <DependentUpon>Site.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.min.css">
+      <DependentUpon>Site.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Template\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Template\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Template\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Site.less" />
+    <Content Include="Scripts\app\binder.min.js">
+      <DependentUpon>binder.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\bootstrapper.min.js">
+      <DependentUpon>bootstrapper.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\config.min.js">
+      <DependentUpon>config.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\config.min.js.map">
+      <DependentUpon>config.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\datacontext.min.js">
+      <DependentUpon>datacontext.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\datacontext.min.js.map">
+      <DependentUpon>datacontext.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\dataprimer.min.js">
+      <DependentUpon>dataprimer.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\dataprimer.min.js.map">
+      <DependentUpon>dataprimer.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\dataservice.ez.min.js">
+      <DependentUpon>dataservice.ez.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\dataservice.ez.min.js.map">
+      <DependentUpon>dataservice.ez.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\dataservice.min.js">
+      <DependentUpon>dataservice.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\dataservice.min.js.map">
+      <DependentUpon>dataservice.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\dataservice.person.min.js">
+      <DependentUpon>dataservice.person.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\dataservice.person.min.js.map">
+      <DependentUpon>dataservice.person.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\filter.event.min.js">
+      <DependentUpon>filter.event.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\filter.event.min.js.map">
+      <DependentUpon>filter.event.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\ko.bindingHandler.min.js">
+      <DependentUpon>ko.bindingHandler.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\ko.bindingHandler.min.js.map">
+      <DependentUpon>ko.bindingHandler.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\ko.debug.helpers.min.js">
+      <DependentUpon>ko.debug.helpers.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\ko.debug.helpers.min.js.map">
+      <DependentUpon>ko.debug.helpers.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\messenger.min.js">
+      <DependentUpon>messenger.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\messenger.min.js.map">
+      <DependentUpon>messenger.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\model.ez.min.js">
+      <DependentUpon>model.ez.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\model.ez.min.js.map">
+      <DependentUpon>model.ez.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\model.min.js">
+      <DependentUpon>model.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\model.min.js.map">
+      <DependentUpon>model.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\model.person.min.js">
+      <DependentUpon>model.person.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\model.person.min.js.map">
+      <DependentUpon>model.person.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\presenter.min.js">
+      <DependentUpon>presenter.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\presenter.min.js.map">
+      <DependentUpon>presenter.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\route-config.min.js">
+      <DependentUpon>route-config.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\route-config.min.js.map">
+      <DependentUpon>route-config.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\route-mediator.min.js">
+      <DependentUpon>route-mediator.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\route-mediator.min.js.map">
+      <DependentUpon>route-mediator.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\router.min.js">
+      <DependentUpon>router.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\router.min.js.map">
+      <DependentUpon>router.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\sort.min.js">
+      <DependentUpon>sort.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\sort.min.js.map">
+      <DependentUpon>sort.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\store.min.js">
+      <DependentUpon>store.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\store.min.js.map">
+      <DependentUpon>store.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\utils.min.js">
+      <DependentUpon>utils.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\utils.min.js.map">
+      <DependentUpon>utils.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\vm.ez.min.js">
+      <DependentUpon>vm.ez.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\vm.ez.min.js.map">
+      <DependentUpon>vm.ez.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\vm.min.js">
+      <DependentUpon>vm.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\vm.min.js.map">
+      <DependentUpon>vm.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\vm.shell.min.js">
+      <DependentUpon>vm.shell.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\vm.shell.min.js.map">
+      <DependentUpon>vm.shell.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\binder.min.js.map">
+      <DependentUpon>binder.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\bootstrapper.min.js.map">
+      <DependentUpon>bootstrapper.js</DependentUpon>
+    </Content>
     <None Include="Scripts\lib\amplify-vsdoc.js" />
-    <Content Include="Content\main.css" />
-    <Content Include="Content\normalize.css" />
+    <Content Include="Content\Template\css\bootstrap-theme.css" />
+    <Content Include="Content\Template\css\bootstrap-theme.min.css" />
+    <Content Include="Content\Template\css\bootstrap.css" />
+    <Content Include="Content\Template\css\bootstrap.min.css" />
+    <Content Include="Content\Template\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Notes.txt" />
     <Content Include="Scripts\app\binder.js" />
     <Content Include="Scripts\app\bootstrapper.js" />
@@ -215,9 +395,14 @@
     <Content Include="Scripts\app\vm.ez.js" />
     <Content Include="Scripts\app\vm.js" />
     <Content Include="Scripts\app\vm.shell.js" />
+    <None Include="Scripts\lib\breeze.intellisense.js" />
+    <Content Include="Scripts\lib\breeze.debug.js" />
+    <Content Include="Scripts\lib\breeze.min.js" />
     <Content Include="Scripts\lib\amplify.js" />
     <Content Include="Scripts\lib\amplify.request.js" />
     <Content Include="Scripts\lib\amplify.store.js" />
+    <Content Include="Scripts\lib\bootstrap.js" />
+    <Content Include="Scripts\lib\bootstrap.min.js" />
     <Content Include="Scripts\lib\infuser.js" />
     <Content Include="Scripts\lib\jquery.mockjson.js" />
     <Content Include="Scripts\lib\json2.js" />
@@ -235,14 +420,13 @@
     <Content Include="Scripts\lib\underscore.js" />
     <Content Include="Scripts\lib\moment.js" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\lib\q.js" />
+    <Content Include="Scripts\lib\q.min.js" />
     <Content Include="Test\qunit\qunit-composite.css" />
     <Content Include="Test\qunit\qunit-composite.js" />
     <Content Include="Test\qunit\qunit.css" />
-    <Content Include="Content\toastr.css" />
-    <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\toastr.less" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
@@ -289,20 +473,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="Scripts\lib\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -315,7 +485,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\" />
+    <Folder Include="Images\" />
     <Folder Include="Scripts\app\mock\" />
   </ItemGroup>
   <ItemGroup>
